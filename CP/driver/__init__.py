@@ -10,8 +10,8 @@ import options
 
 def run():
     # Print a banner message
-    print "Parboil parallel benchmark suite, version 0.1"
-    print
+    print("Parboil parallel benchmark suite, version 0.1")
+    print()
     
     # Global variable setup
     root_path = os.getcwd()

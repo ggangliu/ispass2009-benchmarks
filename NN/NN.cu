@@ -306,7 +306,7 @@ void NeuralNetwork()
 	// CUT_SAFE_CALL(cutStartTimer(timer));
 	printf("NUM=%d\n", NUM);
 	dim3 Layer1_Block(6,NUM,1);
-	dim3 Layer1_Thread(13,13);
+	dim3 Layer1_Thread(8,8);
 	executeFirstLayer<<<Layer1_Block,Layer1_Thread>>>(Layer1_Neurons_GPU,Layer1_Weights_GPU,Layer2_Neurons_GPU);
 
 	dim3 Layer2_Block(50,NUM,1);

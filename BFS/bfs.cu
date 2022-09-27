@@ -21,7 +21,7 @@ Created by Pawan Harish.
 #include <math.h>
 #include <cutil.h>
 
-#define MAX_THREADS_PER_BLOCK 256
+#define MAX_THREADS_PER_BLOCK 64 
 
 int no_of_nodes;
 int edge_list_size;

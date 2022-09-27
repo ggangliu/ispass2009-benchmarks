@@ -23,16 +23,16 @@ fi
 if [ $1 = "--cleanup" ]; then
     echo "Removing existing configs in the following directories:"
     for BMK in $BENCHMARKS; do
-        if [ -f $BMK/gpgpusim.config ]; then
+        if [ -f $BMK/mvpgpusim.config ]; then
             echo "$BMK"
             OLD_ICNT=`awk '/-inter_config_file/ { print $2 }' $BMK/gpgpusim.config`
-            rm $BMK/gpgpusim.config $BMK/$OLD_ICNT
+            rm $BMK/mvpgpusim.config $BMK/$OLD_ICNT
         fi
     done
     exit 0
 fi
 
-GPU_CONFIG_FILE=$GPGPUSIM_ROOT/configs/$GPGPUSIM_CONFIG/gpgpusim.config
+GPU_CONFIG_FILE=$GPGPUSIM_ROOT/configs/$GPGPUSIM_CONFIG/mvpgpusim.config
 if [ -f $GPU_CONFIG_FILE ]; then
     echo "Found GPGPU-Sim config file: $GPU_CONFIG_FILE"
 else
@@ -50,7 +50,7 @@ else
 fi
 
 for BMK in $BENCHMARKS; do
-    if [ -f $BMK/gpgpusim.config ]; then
+    if [ -f $BMK/mvpgpusim.config ]; then
         echo "Existing symbolic-links to config found in $BMK! Skipping... "
     else
         echo "Adding symbolic-links to configuration files for $BMK:"

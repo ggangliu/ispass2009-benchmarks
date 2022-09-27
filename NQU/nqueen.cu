@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <cutil.h>
 
-#define THREAD_NUM		96
+#define THREAD_NUM	64	
 
 
 int bunk = 0;		// this is a dummy variable used for making sure clock() are not optimized out
